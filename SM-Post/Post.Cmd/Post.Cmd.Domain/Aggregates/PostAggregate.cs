@@ -21,6 +21,8 @@ public class PostAggregate : AggregateRoot
     }
     #endregion
 
+    public PostAggregate() { }
+    
     public PostAggregate(Guid id, string author, string message)
     {
         this.RaiseEvent(new PostCreatedEvent
