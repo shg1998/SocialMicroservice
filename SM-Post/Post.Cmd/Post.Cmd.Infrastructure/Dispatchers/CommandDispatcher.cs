@@ -20,5 +20,5 @@ public class CommandDispatcher : ICommandDispatcher
         else
             throw new ArgumentException(nameof(handler), "No Command handler was registered!");
 
-    }
+    } 
 }
