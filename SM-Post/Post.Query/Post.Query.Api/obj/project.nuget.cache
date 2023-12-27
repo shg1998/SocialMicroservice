@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "6vu+USkSD6eqJADA7NpkNYUsXod7MZM64O0U1aWgKGE2DR7rIhVV+ZPGpxtNBD4ZwjQdwN7c/jM4AqvR2OfpaQ==",
+  "success": true,
+  "projectFilePath": "/Users/ap/Desktop/Projects/microservice sample/SM-Post/Post.Query/Post.Query.Api/Post.Query.Api.csproj",
+  "expectedPackageFiles": [
+    "/Users/ap/.nuget/packages/microsoft.aspnetcore.openapi/8.0.0/microsoft.aspnetcore.openapi.8.0.0.nupkg.sha512",
+    "/Users/ap/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/ap/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/Users/ap/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "/Users/ap/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "/Users/ap/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "/Users/ap/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}

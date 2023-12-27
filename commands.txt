@@ -1,0 +1,7 @@
+dotnet sln add ./Post.Cmd/Post.Cmd.Infrastructure/Post.Cmd.Infrastructure.csproj
+
+dotnet new classlib -o Post.Query.Infrastructure
+
+dotnet new sln
+
+dotnet add package Confluent.Kafka
