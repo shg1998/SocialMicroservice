@@ -1,7 +1,20 @@
+using Microsoft.EntityFrameworkCore;
+using Post.Query.Infrastructure.DataAccess;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+Action<DbContextOptionsBuilder> configureDbContext = 
+(o => o.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
+builder.Services.AddDbContext<DatabaseContext>(configureDbContext);
+builder.Services.
+AddSingleton<DatabaseContextFactory>(new DatabaseContextFactory(configureDbContext));
+
+// create database and tables from code : 
+var datacontext = builder.Services.BuildServiceProvider().GetRequiredService<DatabaseContext>();
+datacontext.Database.EnsureCreated();
+
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -23,7 +36,7 @@ var summaries = new[]
 
 app.MapGet("/weatherforecast", () =>
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
+    var forecast = Enumerable.Range(1, 5).Select(index =>
         new WeatherForecast
         (
             DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
