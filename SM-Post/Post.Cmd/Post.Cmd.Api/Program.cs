@@ -1,6 +1,10 @@
 using CQRS.Core.Domain;
+using CQRS.Core.Handlers;
 using CQRS.Core.Infrastructure;
+using Post.Cmd.Api.Commands;
+using Post.Cmd.Domain.Aggregate;
 using Post.Cmd.Infrastructure.Config;
+using Post.Cmd.Infrastructure.Handlers;
 using Post.Cmd.Infrastructure.Repositories;
 using Post.Cmd.Infrastructure.Stores;
 
@@ -13,6 +17,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IEventStoreRepository, EventStoreRepository>();
 builder.Services.AddScoped<IEventStore, EventStore>();
+builder.Services.AddScoped<IEventSourcingHandler<PostAggregate>, EventSourcingHandler>();
+builder.Services.AddScoped<ICommandHandler, CommandHandler>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
