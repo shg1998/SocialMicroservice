@@ -10,9 +10,11 @@ public abstract class AggregateRoot
 
     public int Version { get; set; } = -1;
 
-    public IEnumerable<BaseEvent> GetUncommittedChanges() => this._changes;
+    public IEnumerable<BaseEvent> GetUncommittedChanges() =>
+        this._changes;
 
-    public void MarkChangesAsCommitted() => this._changes.Clear();
+    public void MarkChangesAsCommitted() =>
+     this._changes.Clear();
 
     private void ApplyChanges(BaseEvent @event, bool isNew)
     {
